@@ -29,6 +29,9 @@ section.hero{
     color: #fff;
     transition: all .3s ease-in-out;
 }
+.add-to-cart:focus{
+    outline: none;
+}
 .btn-primary{
     background: #fe5f1e
 }
@@ -51,4 +54,8 @@ section.hero{
 }
 .login a:hover{
     color: #b23301;
+}
+.noty_theme_mint{
+    border-radius: 50px!important;
+    padding-left: 8px!important;
 }

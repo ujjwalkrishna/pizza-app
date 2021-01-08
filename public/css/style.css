@@ -59,3 +59,9 @@ section.hero{
     border-radius: 50px!important;
     padding-left: 8px!important;
 }
+.success-alert{
+    background: green;
+}
+a.link{
+    color: #fe5f1e
+}

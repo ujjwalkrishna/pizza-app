@@ -1,7 +1,10 @@
 <section class="login flex justify-center pt-16">
         <div class="max-w-xs w-full space-y-8">
-          <form class="mt-8 space-y-6" action="#" method="POST">
+          <form class="mt-8 space-y-6" action="/login" method="POST">
             <input type="hidden" name="remember" value="true">
+            <% if(messages.error){ %>
+              <span class="font-bold justify-text"><%= messages.error%></span>
+            <% } %>
             <div class="rounded-md shadow-sm -space-y-px">
               <div>
                 <label for="email-address" class="sr-only">Email address</label>

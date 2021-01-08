@@ -29,3 +29,9 @@ addToCart.forEach((btn)=>{
         
     })
 })
+const msgSuccess = document.querySelector('#success-alert');
+if(msgSuccess){
+    setTimeout(()=>{
+        msgSuccess.remove();
+    }, 2000)
+}

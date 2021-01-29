@@ -1,5 +1,5 @@
 <section class="order px-12 py-12">
-  <div class="order container">
+  <div class="container">
     <h1 class="font-bold mb-4 text-lg">All Orders</h1>
     <% if(messages.success){ %>
       <div id="success-alert" class="flex items-center text-white text-sm font-bold px-4 py-3 bg-green-500"
@@ -23,7 +23,7 @@
             <% orders.forEach(order=>{ %>
               <tr>
                 <td class="border px-4 py-2">
-                  <a href="#" class="link">
+                  <a href="/customer/orders/<%= order._id %>" class="link">
                     <%= order._id %>
                   </a>
                 </td>

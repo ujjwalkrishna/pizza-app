@@ -4,6 +4,15 @@ function cartController(){
             res.render('customers/cart');
         },
         update(req, res){
+    
+            // let cart = {
+            //     items: {
+            //               pizzaId: {item: pizzaObject, qty},
+            //         },
+            //     totalQty: 0,
+            //     totalPrice: 0
+            // }
+            
             if(!req.session.cart){
                 req.session.cart = {
                     items: {},

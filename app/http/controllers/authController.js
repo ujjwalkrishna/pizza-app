@@ -83,6 +83,7 @@ function authController(){
 
         logout(req, res){
             req.logout();
+            delete req.session.cart;
             return res.redirect('/');
         }
     }

@@ -11,7 +11,9 @@ const MongoDBStore = require('connect-mongo')(session); // It will store our ses
 const passport = require('passport');
 
 //Database Connection
-const url = 'mongodb://localhost:27017/pizza';
+
+const url = 'mongodb+srv://'+process.env.DB_USER+':'+process.env.DB_PASS+'@cluster0.zoxc4.mongodb.net/pizza';
+// const url = 'mongodb://localhost:27017/pizza';
 mongoose.connect(url, {useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true, useFindAndModify: true});
 const connection = mongoose.connection;
 connection.once('open', ()=>{
@@ -61,6 +63,74 @@ app.set('view engine', 'ejs');
 
 //Set Route
 require('./routes/web.js')(app);
+
+const Menu  = require('./app/models/menu');
+let arr = [
+    {
+        "name" : "Margherita",
+        "image" : "pizza.png",
+        "price" : 250,
+        "size" : "small"
+    },
+    
+    {
+        "name" : "Pepperoni",
+        "image" : "pizza.png",
+        "price" : 500,
+        "size" : "medium"
+    },
+    
+    {
+        "name" : "Vegies pizza",
+        "image" : "pizza.png",
+        "price" : 600,
+        "size" : "large"
+    },
+    
+    {
+        "name" : "Paneer pizza",
+        "image" : "pizza.png",
+        "price" : 20,
+        "size" : "small"
+    },
+    
+    
+    {
+        "name" : "Chicken Mushroom",
+        "image" : "pizza.png",
+        "price" : 350,
+        "size" : "medium"
+    },
+    
+    
+    {
+        "name" : "Americana",
+        "image" : "pizza.png",
+        "price" : 500,
+        "size" : "large"
+    }
+    ,
+    
+    {
+        "name" : "Carbonara",
+        "image" : "pizza.png",
+        "price" : 200,
+        "size" : "small"
+    },
+    
+    {
+        "name" : "Marinara",
+        "image" : "pizza.png",
+        "price" : 300,
+        "size" : "medium"
+    }
+]
+Menu.insertMany(arr).then(()=>{
+    console.log('Data inserted');
+}).catch(err =>{
+    console.log(err);
+})
+
 
 app.listen(process.env.PORT || 3000, ()=>{
     console.log('Listening on port 3000');
